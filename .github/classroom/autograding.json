@@ -1,0 +1,124 @@
+{
+  "tests": [
+    {
+      "name": "listSize",
+      "setup": "",
+      "run": "make test try=listSize",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "addFront",
+      "setup": "",
+      "run": "make test try=addFront",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "addBack",
+      "setup": "",
+      "run": "make test try=addBack",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "printList",
+      "setup": "",
+      "run": "make test try=printList",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "popBack",
+      "setup": "",
+      "run": "make test try=popBack",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "popFront",
+      "setup": "",
+      "run": "make test try=popFront",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "insertStudent",
+      "setup": "",
+      "run": "make test try=insertStudent",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "retrieveStudent",
+      "setup": "",
+      "run": "make test try=retrieveStudent",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "removeStudentById",
+      "setup": "",
+      "run": "make test try=removeStudentById",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "updateGPA",
+      "setup": "",
+      "run": "make test try=updateGPA",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "mergeList",
+      "setup": "",
+      "run": "make test try=mergeList",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "honorRoll",
+      "setup": "",
+      "run": "make test try=honorRoll",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    }
+  ]
+}
