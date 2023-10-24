@@ -93,23 +93,21 @@ void StudentList::popBack()
 // Don't forget that your head and tail pointers will be null pointers if the list is empty
 void StudentList::popFront()
 {
-	if (numStudents == 0)
-	{
-		cout << "list is empty";
-	}
-	if (numStudents == 1)
-	{
-		delete head;
-		head = nullptr;
-		tail = nullptr;
-	}
-	else
-	{
-		Node *temp = head->next;
-		temp->prev = nullptr;
-		delete head;
-		head = temp;
-	}
+	  if (head == nullptr) {
+        cout << "empty" << endl;
+        return;
+    }
+
+    Node *temp = head;
+    if (head == tail) {
+        head = nullptr;
+        tail = nullptr;
+    } else {
+        head = head->next;
+        head->prev = nullptr;
+    }
+    delete temp;
+    numStudents--;
 }
 
 // insert a student at the position "index".
