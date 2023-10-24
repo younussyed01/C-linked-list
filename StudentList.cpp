@@ -174,9 +174,8 @@ Student StudentList::retrieveStudent(int idNum)
 void StudentList::removeStudentById(int idNum)
 {
 	Node *temp = head;
-	while (temp != nullptr)
+	while (temp != nullptr){
 	if (temp->data.id == idNum) {
-	{
 		if (temp == head)
 		{
 			popFront();
