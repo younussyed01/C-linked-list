@@ -92,7 +92,7 @@
 	 {
 		if(numStudents == 0)
 		{
-			cout << "list is empty"
+			cout << "list is empty";
 		}
 		if(numStudents==1)
 		{
@@ -119,7 +119,7 @@
 	 {
 		Node* temp = new Node(s);
 
-		if(index == nullptr)
+		if(index == 0)
 		{
 			cout << "outside";
 			addFront(s);
@@ -143,16 +143,58 @@
 	// if no student matches, print a message 
 	// and create and return a dummy student object
 	Student StudentList::retrieveStudent(int idNum) {
-		Student fixthis;
-		return student();
+		Node* temp = head;
+		while(temp != nullptr)
+		{
+		if(temp->data.id == idNum)
+		{
+			return temp->data;
+		}
+		temp = temp->next;
+		}
+		cout << "no student match";
+		return Student();
 	}
-
+	
 	// Remove a Node with a student from the list with a given id number
 	// If no student matches, print a message and do nothing
-	void StudentList::removeStudentById(int idNum) {}
+	void StudentList::removeStudentById(int idNum) 
+	{
+		Node* temp = head;
+		while(temp != nullptr)
+		{
+			if(temp == head)
+			{
+				if(temp->next)
+				{
+					head =temp->next;
+					head->prev=nullptr;
+				}
+				else{
+					head = nullptr;
+					tail=nullptr;
+				}
+			}else if (temp == tail)
+			{
+				tail = temp->prev;
+				tail ->next=nullptr;
+			}
+			else{
+				temp->prev->next=temp->next;
+				temp->next->prev= temp ->prev;
+			}
+			delete temp;
+			numStudents--;
+			return;
+		}
+		temp = temp->next;
+	}
 
 	//Change the gpa of the student with given id number to newGPA
-	void StudentList::updateGPA(int idNum, float newGPA) {}
+	void StudentList::updateGPA(int idNum, float newGPA) 
+	{
+		
+	}
 
 	//Add all students from otherList to this list.
 	//otherlist should be empty after this operation.
