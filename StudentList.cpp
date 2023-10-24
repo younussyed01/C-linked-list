@@ -176,34 +176,23 @@ void StudentList::removeStudentById(int idNum)
 	Node *temp = head;
 	while (temp != nullptr)
 	{
-		if (temp == head)
+		if(temp==head)
 		{
-			if (temp->next)
-			{
-				head = temp->next;
-				head->prev = nullptr;
-			}
-			else
-			{
-				head = nullptr;
-				tail = nullptr;
-			}
+			popFront();
 		}
-		else if (temp == tail)
+		else if(temp==tail)
 		{
-			tail = temp->prev;
-			tail->next = nullptr;
+			popBack();
 		}
-		else
-		{
+		else{
 			temp->prev->next = temp->next;
-			temp->next->prev = temp->prev;
+			temp->next->prev=temp->prev;
+			delete temp;
+			numStudents--;
 		}
-		delete temp;
-		numStudents--;
 		return;
 	}
-	temp = temp->next;
+	temp=temp->next;
 }
 
 // Change the gpa of the student with given id number to newGPA
@@ -262,13 +251,14 @@ void StudentList::mergeList(StudentList &otherList)
 StudentList StudentList::honorRoll(float minGPA)
 {
 	StudentList honorRollList;
-	while (head != nullptr)
+	Node *temp = head;
+	while (temp != nullptr)
 	{
-		if (head->data.GPA >= minGPA)
+		if (temp->data.GPA >= minGPA)
 		{
-			honorRollList.addBack(head->data);
+			honorRollList.addBack(temp->data);
 		}
-		head = head->next; // increment
+		temp = temp->next; // increment
 	}
 	return honorRollList;
 }
