@@ -118,28 +118,38 @@ void StudentList::popFront()
 //  Remember that you already have methods that can add students to the front or back of list if needed! Don't repeat this code.
 void StudentList::insertStudent(Student s, int index)
 {
-		Node * current = head;
-		Node *temp = new Node(s);
-	if (index == 0)
+	if (index < 0)
 	{
 		cout << "outside";
-		addFront(s);
+		addBack(s);
 	}
-	else
+	else if (index >= numStudents)
 	{
+		cout << "out of range";
+		addBack(s);
+	}
+	else {
+	{
+		Node * current = head;
 		for (int i = 0; i < index; i++)
 		{
-			head = head->next;
+			current = current->next;
 		}
 
-		temp->prev = current->prev;
-		temp->next = current;
-		current->prev->next = temp;
-		current->prev = temp;
-	}
+			Node *temp = new Node(s);
+		if(current->prev != nullptr)
+		{
+			current ->prev->next=temp;
+		}
+		else{
+			head = temp;
+		}
+		current->prev=temp;
 		numStudents++;
-
+	}
+	}
 }
+
 
 
 // find the student with the given id number and return them
