@@ -130,21 +130,20 @@ void StudentList::insertStudent(Student s, int index)
 	}
 	else {
 	
-		Node * current = head;
 		for (int i = 0; i < index; i++)
 		{
-			current = current->next;
+			head = head->next;
 		}
 
 			Node *temp = new Node(s);
-		if(current->prev != nullptr)
+		if(head->prev != nullptr)
 		{
-			current ->prev->next=temp;
+			head ->prev->next=temp;
 		}
 		else{
 			head = temp;
 		}
-		current->prev=temp;
+		head->prev=temp;
 		numStudents++;
 	}
 }
