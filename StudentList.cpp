@@ -262,14 +262,13 @@ void StudentList::mergeList(StudentList &otherList)
 StudentList StudentList::honorRoll(float minGPA)
 {
 	StudentList honorRollList;
-	Node *temp = head;
-	while (temp != nullptr)
+	while (head != nullptr)
 	{
-		if (temp->data.GPA >= minGPA)
+		if (head->data.GPA >= minGPA)
 		{
-			honorRollList.addBack(temp->data);
+			honorRollList.addBack(head->data);
 		}
-		temp = temp->next; // increment
+		head = head->next; // increment
 	}
 	return honorRollList;
 }
