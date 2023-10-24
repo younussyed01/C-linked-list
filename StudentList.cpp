@@ -175,24 +175,28 @@ void StudentList::removeStudentById(int idNum)
 {
 	Node *temp = head;
 	while (temp != nullptr)
+	if (temp->data.id == idNum) {
 	{
-		if(temp==head)
+		if (temp == head)
 		{
 			popFront();
 		}
-		else if(temp==tail)
+		else if (temp == tail)
 		{
 			popBack();
 		}
-		else{
+		else
+		{
 			temp->prev->next = temp->next;
-			temp->next->prev=temp->prev;
+			temp->next->prev = temp->prev;
 			delete temp;
 			numStudents--;
 		}
 		return;
 	}
-	temp=temp->next;
+	temp = temp->next;
+}
+cout << "error no id found";
 }
 
 // Change the gpa of the student with given id number to newGPA
